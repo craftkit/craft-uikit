@@ -1,0 +1,27 @@
+{
+  "name": "craft-uikit",
+  "version": "1.0.0",
+  "description": "JavaScript UI library for Inversion of Markup",
+  "main": "index.js",
+  "module": "index.js",
+  "unpkg": "dist/craft-uikit.min.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+	"build": "wabpack --config config/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craftkit/craft-uikit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craftkit/craft-uikit/issues"
+  },
+  "homepage": "https://github.com/craftkit/craft-uikit"
+}
