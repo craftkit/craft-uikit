@@ -15,14 +15,14 @@ import { Component } from '../Core/Component.js';
  *     }
  *     style(componentId){
  *         return `
- *             .${componentId} { font-size:1em; }
- *             .message_${componentId} { color:blue; }
+ *             .root { font-size:1em; }
+ *             .message { color:blue; }
  *         `;
  *     }
  *     template(componentId){
  *         return `
- *             <div id='${componentId}' class='${componentId}'>
- *                 <h1 class='message_${componentId}'>Hello ${this.name} !<\h1>
+ *             <div id='root' class='root'>
+ *                 <h1 class='message'>Hello ${this.name} !<\h1>
  *             </div>
  *         `;
  *     }
