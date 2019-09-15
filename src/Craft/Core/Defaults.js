@@ -1,6 +1,6 @@
 
 /** 
- * Application default valiables.
+ * Application default variables.
  * 
  * @namespace Craft.Core.Defaults
  * @packagename Craft.Core.Defaults
@@ -38,7 +38,8 @@ export var Defaults = {
 	BASE_DIV_NAME : 'CraftRoot',
 	
 	/**
-	 * Whether to use component shortcut in HTML. 
+	 * Whether to use component shortcut. 
+	 * 
 	 * True to set `window['componentId'] = component`, to be able to use `${componentId}.method()` in template. 
 	 * This is set to false by default, but it is recommended to set to true at the start of your application bootloader.
 	 * 

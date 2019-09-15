@@ -3,6 +3,7 @@ import { Defaults } from './Defaults.js';
 
 /** 
  * Provides global Component access.  
+ * 
  * You may love to set`Craft.Core.Defaults.ALLOW_COMPONENT_SHORTCUT = true` to be able to access component via its id.
  * 
  * ### Example in your template

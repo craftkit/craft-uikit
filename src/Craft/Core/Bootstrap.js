@@ -4,10 +4,10 @@ import { Context } from './Context.js';
 /** 
  * The application entry point.
  * 
- * Argument for Craft.Core.Bootstrap.boot must have your entry function named as didBootApplication. 
+ * Argument for `Craft.Core.Bootstrap.boot` must have your entry function named as `didBootApplication`. 
  * The function will be called just after the initialization process of Craft-UIKit itself. 
  * 
- * You may also set you optional value or function in the argument object. 
+ * You can also set your optional value or function in the argument object. 
  * It can be retrieved via `Craft.Core.Context.getApp()`.
  * 
  * @namespace Craft.Core.Bootstrap

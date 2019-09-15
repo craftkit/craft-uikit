@@ -2,7 +2,7 @@
 import { ComponentStack } from './ComponentStack.js';
 
 /** 
- * Component super class.
+ * Super class for all Craft-UIKit Components.
  * 
  * @packagename Craft.Core.Component
  */
@@ -28,8 +28,9 @@ export class Component {
 	/**
 	 * Initialize instance values 
 	 * 
-	 * You should never call directly and override this method. 
-	 * This is a part of `loadView` the initialization processs, but separated for readability. 
+	 * You should never call this method directly, and should never override this method. 
+	 * This is a part of `loadView` the initialization processs of Component, but separated for readability. 
+	 * 
 	 * Use `viewDidLoad` for your additional initialization.
 	 * 
 	 * (highly recommended to be implemented as synchronous)
@@ -59,8 +60,9 @@ export class Component {
 	}
 	
 	/**
-	 * Render template and get the shadow DOM. 
-	 * If you call this method, your shadow dom will be cleared. (including scoped style)
+	 * Render template, and get the shadow DOM. 
+	 * 
+	 * If you call this method, this.root(including scoped style) will be cleared. 
 	 */
 	renderView(){
 		let html = this.template(this.componentId).trim();
@@ -84,7 +86,7 @@ export class Component {
 	}
 	
 	/**
-	 * Load style from text and append to the shadow root
+	 * Load style from text, and append it to the shadow root.
 	 * 
 	 * @param {String} style - stylesheet text expression
 	 * @param {String} id - id for the style tag (optional)
@@ -124,16 +126,16 @@ export class Component {
 	 * You should not never override this method. 
 	 * Use `viewDidLoad` for your additional initialization.
 	 * 
-	 * If you have to implement your own loadView method, you must implement yours as:
+	 * If you have to implement your own `loadView` method, you must implement yours as:
 	 * 
 	 * 1. this.init();  
 	 * 2. this.render();  
 	 *    (here, you can access to the RootView of this component)  
-	 *    (your component setup in here)  
+	 *    (your component setup is in here)  
 	 * 3. set isViewLoaded to true.  
 	 * 4. call this.viewDidLoad(callback);  
 	 * 
-	 * and incomming callback should be passed to the viewDidLoad.
+	 * and incomming callback should be passed to the `viewDidLoad`.
 	 * 
 	 * (this is highly recommended to be implemented as synchronous)
 	 * 
@@ -164,7 +166,7 @@ export class Component {
 	
 	/**
 	 * Lifecycle method:  
-	 * Called at the end of loadView. Component instance loaded and ready to use this.view. 
+	 * Called at the end of `loadView`. Component instance loaded and ready to use this.view. 
 	 * 
 	 * You have to call callback at the end of yours.
 	 * 
@@ -176,12 +178,12 @@ export class Component {
 	
 	/**
 	 * Lifecycle method:  
-	 * Called just before appending this.view to the parent. 
+	 * Called just before appending `this.view` to the parent. 
 	 * 
 	 * You *must* call callback at the end of yours.
 	 * 
 	 * Component RootView is now on the screen (in the browser DOM tree), 
-	 * and concrete ViewController should ensure to be able to access this.view via global DOM tree after here.
+	 * and concrete ViewController should ensure to be able to access `this.view` via global DOM tree after here.
 	 * 
 	 * @argument {Function} callback - callback
 	 */
@@ -191,8 +193,8 @@ export class Component {
 	
 	/**
 	 * Lifecycle method:  
-	 * Called just after this.view appended to the parent.  
-	 * After this method, you can access the compoenent's RootView via document.getElementByID and some other query selectors. 
+	 * Called just after `this.view` appended to the parent.  
+	 * After this method, you can access the compoenent's RootView via `document.getElementByID` and some other query selectors. 
 	 * 
 	 * You have to call callback at the end of yours.
 	 * 
@@ -204,8 +206,8 @@ export class Component {
 	
 	/**
 	 * Lifecycle method:  
-	 * Called just before removing this.view from its parent.  
-	 * You may remove your listener defined in viewWillAppear or viewDidAppear. 
+	 * Called just before removing `this.view` from its parent.  
+	 * You may remove your listener defined in `viewWillAppear` or `viewDidAppear`. 
 	 * 
 	 * You have to call callback at the end of yours.
 	 * 
@@ -217,7 +219,7 @@ export class Component {
 	
 	/**
 	 * Lifecycle method:  
-	 * Called just after this.view removed from its parent.
+	 * Called just after `this.view` removed from its parent.
 	 * 
 	 * You have to call callback at the end of yours.
 	 * 
@@ -229,6 +231,10 @@ export class Component {
 	
 	/**
 	 * Show this component.
+	 * 
+	 * TODO:
+	 * this.view.style.display should cascade original definition.
+	 * It may be `inline-block`.
 	 * 
 	 * @argument {Function} callback - callback
 	 */
@@ -314,7 +320,7 @@ export class Component {
 	/**
 	 * Remove a sub-view from this.view
 	 * 
-	 * `removeView` does not call unloadView of the removed view.
+	 * `removeView` does not call `unloadView` of the removed view.
 	 * When to parge the component is a responsibility of your component consumer.
 	 * 
 	 * @param {Object} options - option or remove target Componenet

@@ -11,8 +11,8 @@ import { Component } from '../Core/Component.js';
  * Supports:
  * 
  * * Tap event (can be listen via NotificationCenter by name of 'ContentTapped')
- * * automatically register `this` to the appended Component.
- * * width and height fit to the viewport
+ * * Automatically register `this` to the appended Component
+ * * Width and height fit to the viewport
  * 
  * @packagename Craft.UI.DefaultViewController
  * 

@@ -40,6 +40,7 @@ export class View extends Component {
 	
 	/**
 	 * Set ViewController manages me.  
+	 * 
 	 * If you have more components under your RootView, you have to propagete the viewController for them.
 	 * 
 	 * @param {Craft.Core.Component} viewController - any Component available

@@ -162,7 +162,7 @@ and converted to a DOM fragment by Craft.Core.Component.renderView.
 Its first element is used for **this.root**. 
 
 When you define `id` and `class` for the root element, you have to name it as 'root'. 
-This is simplify cascading super class style sheet.
+This will simplify to cascade style-sheet of super class.
 
 ```javascript 
 template(componentId){

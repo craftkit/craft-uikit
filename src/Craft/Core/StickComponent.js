@@ -5,7 +5,7 @@ import { Component } from './Component.js';
  * Component disabled auto componentId
  * 
  * All of your instances will have static componentId based on your `packagename`. 
- * This is for simplify your singleton object. 
+ * This will simplify singleton object. 
  * 
  * @packagename Craft.Core.StickComponent
  */

@@ -51,8 +51,9 @@ export var Context = {
 	
 	/**
 	 * Setting Root-Element of your app.
+	 * 
 	 * If you have your RootViewController, 
-	 * Craft.Core.Context.setRootViewController() will set Root-Element according to Craft.Core.Default.BASE_DIV_NAME.
+	 * `Craft.Core.Context.setRootViewController()` will set Root-Element according to`Craft.Core.Default.BASE_DIV_NAME`.
 	 * Otherwise, this is optional.
 	 * 
 	 * @memberof Craft.Core.Context
@@ -79,7 +80,7 @@ export var Context = {
 	/**
 	 * Setting RootViewController of you application. 
 	 * 
-	 * If you want to manage popstate and history, you have to set your RootViewController implementing appropriate interface.
+	 * If you want to manage popstate and history, you have to set your RootViewController that implements appropriate interface.
 	 * @see {@link Craft.UI.DefaultViewController}
 	 * 
 	 * @memberof Craft.Core.Context

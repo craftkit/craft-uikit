@@ -1,6 +1,7 @@
 
 /** 
  * Global key-press event manager.  
+ * 
  * Before you use this utility, you have to call `activate`.  
  * (You will call this in your bootstrap)
  * 
