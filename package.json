@@ -1,6 +1,6 @@
 {
   "name": "@craftkit/craft-uikit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JavaScript UI library for Inversion of Markup",
   "main": "index.js",
   "module": "index.js",
@@ -17,7 +17,14 @@
     "type": "git",
     "url": "git+https://github.com/craftkit/craft-uikit.git"
   },
-  "keywords": [],
+  "keywords": [
+  	"WebComponents",
+  	"Shadow DOM",
+  	"OOP",
+  	"SPA",
+  	"PWA",
+  	"frontend"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
