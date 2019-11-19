@@ -93,10 +93,12 @@ export var Context = {
 		if( !this.rootElement ){
 			this.rootElement = document.getElementById(Defaults.BASE_DIV_NAME);
 		}
+		rootViewController.viewWillAppear();
 		if( !rootViewController.isViewLoaded ){
 			rootViewController.loadView();
 		}
 		this.rootElement.appendChild(rootViewController.view);
+		rootViewController.viewDidAppear();
 		
 		// delegate popstate event to the RootViewController
 		window.addEventListener('popstate',(event) => {
