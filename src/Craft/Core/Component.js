@@ -302,6 +302,10 @@ export class Component {
 			component.loadView();
 		}
 		
+		if( this.viewController ){
+			component.setViewController(this.viewController);
+		}
+		
 		component.viewWillAppear( () => {
 			component.show();
 			target.appendChild(component.view);
