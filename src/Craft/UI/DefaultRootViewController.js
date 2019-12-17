@@ -95,16 +95,18 @@ export class DefaultRootViewController extends DefaultViewController {
 	}
 	
 	/**
-	 * Register History (history.pushState)
+	 * Wrapping history.pushState to be able to call with named object
 	 * 
 	 * @param {Object} options - options
 	 * @param {Object} options.state - state
+	 * @param {String} options.title - page title
 	 * @param {String} options.path - path (hash)
 	 */
 	pushState(options){
 		let state = options.state;
+		let title = options.title;
 		let path  = options.path;
-		window.history.pushState(state,null,path);
+		window.history.pushState(state,title,path);
 	}
 	
 	/**
