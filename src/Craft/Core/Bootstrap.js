@@ -16,6 +16,7 @@ import { Context } from './Context.js';
  * @example
  * 
  * Craft.Core.Bootstrap.boot({
+ *     router : Craft.Core.HashRouter,
  *     didBootApplication : function(options){
  *         let widget = new MyWidget();
  *         widget.loadView();
@@ -45,6 +46,7 @@ export var Bootstrap = {
 	 * 
 	 * @param {Object} app - your application bootloader with didBootApplication
 	 * @param {Function} app.didBootApplication - your bootstrap
+	 * @param {Craft.Core.Router} app.didBootApplication - your bootstrap
 	 * @return {LaunchEnv} - info about launch environment
 	 */
 	boot : function(app){
@@ -55,15 +57,17 @@ export var Bootstrap = {
 		
 		// get launch hash.
 		// this is just for your convenience. you may use `window.location` in your `didBootApplication` function.
+		/*
 		let hash = window.location.hash;
 		let match = hash.match(/^#\/(.*)/);
 		let entryPoint = '';
 		if( match ){
 			entryPoint = match[1];
 		}
+		*/
 		
 		// ok, launch the application
-		Context.getApp().didBootApplication({entryPoint:entryPoint});
+		Context.getApp().didBootApplication();
 	}
 	
 };

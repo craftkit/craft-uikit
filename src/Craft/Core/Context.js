@@ -1,5 +1,6 @@
 
 import { Defaults } from './Defaults';
+import { HashRouter } from './HashRouter';
 
 /** 
  * Application context.
@@ -35,6 +36,12 @@ export var Context = {
 	 */
 	setApp : function(app){
 		this.app = app;
+		
+		if( this.app.router ){
+			this.router = this.app.router;
+		}else{
+			this.router = HashRouter;
+		}
 	},
 	
 	/**
@@ -116,7 +123,37 @@ export var Context = {
 	 */
 	getRootViewController : function(){
 		return this.rootViewController;
-	}
+	},
+	
+	/** 
+	 * Concrete router object.
+	 * @private 
+	 */
+	router : '', 
+	
+	/**
+	 * set router. always called by setApp().
+	 * 
+	 * @param {Craft.Core.Router} router - Router implementation
+	 * 
+	 * @memberof Craft.Core.Context
+	 * @member Craft.Core.Context.setRouter
+	 */
+	setRouter : function(router){
+		this.router = router;
+	},
+	
+	/**
+	 * get router
+	 * 
+	 * @memberof Craft.Core.Context
+	 * @member Craft.Core.Context.getRouter
+	 * 
+	 * @return {Craft.Core.Router} - return router implementation
+	 */
+	getRouter : function(){
+		return this.router;
+	},
 	
 };
 

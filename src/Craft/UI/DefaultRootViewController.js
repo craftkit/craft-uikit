@@ -2,6 +2,7 @@
 import { View } from './View.js';
 import { Component } from '../Core/Component.js';
 import { DefaultViewController } from './DefaultViewController.js';
+import { Context } from '../Core/Context.js';
 
 /** 
  * Default RootViewContoller.
@@ -73,7 +74,7 @@ export class DefaultRootViewController extends DefaultViewController {
 	 * Bringup routing by RootViewController  
 	 */
 	bringup(){
-		this.didReceivePopstate(); // kick the entry method
+		this.didReceivePopstate(null,true); // enter routing with `launch flag`
 	}
 	
 	/**
@@ -83,18 +84,15 @@ export class DefaultRootViewController extends DefaultViewController {
 	 * Please implement your own strategy.
 	 * 
 	 * @param {PopStateEvent} event - PopStateEvent should be handled by your DefaultRootViewController#resolveRoutingRequest
+	 * @param {Boolean} launch - true if this is the first launch, or access from out side of application history scope caused by browser back/foward
 	 */
-	didReceivePopstate(event){
-		let hash = window.location.hash;
-		let match = hash.match(/^#\/(.*)/);
-		let path = '';
-		if( match ){
-			path = match[1];
-		}
-		this.resolveRoutingRequest(path,event);
+	didReceivePopstate(event,launch){
+		Context.getRouter().route(event,launch);
 	}
 	
 	/**
+	 * @deprecated
+	 * 
 	 * Wrapping history.pushState to be able to call with named object
 	 * 
 	 * @param {Object} options - options
@@ -113,10 +111,12 @@ export class DefaultRootViewController extends DefaultViewController {
 	 * Routing request handler.  
 	 * You have to implement your routing here.
 	 * 
-	 * @param {String} path - path (hash by default)
-	 * @param {PopStateEvent} event - PopStateEvent is defined if this method is called via browser back|forward
+	 * @param {Craft.Core.Route} route - route object
+	 * @param {Boolean} options.launch - true if this is the first launch, or access from out side of application history scope caused by browser back/foward
+	 * @param {String} options.path - parsed path. parsing is responsibility of Router implementation
+	 * @param {PopStateEvent} options.event - PopStateEvent if defined
 	 */
-	resolveRoutingRequest(path,event){
+	resolveRoutingRequest(route){
 		// here you should implement how to resolve popstate event
 	}
 	

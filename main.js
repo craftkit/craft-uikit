@@ -2,6 +2,10 @@
 const Craft = {};
 
 import { Bootstrap } from './src/Craft/Core/Bootstrap.js';
+import { Route } from './src/Craft/Core/Route.js';
+import { Router } from './src/Craft/Core/Router.js';
+import { HashRouter } from './src/Craft/Core/HashRouter.js';
+import { PathRouter } from './src/Craft/Core/PathRouter.js';
 import { Context } from './src/Craft/Core/Context.js';
 import { Defaults } from './src/Craft/Core/Defaults.js';
 import { ComponentStack } from './src/Craft/Core/ComponentStack.js';
@@ -22,7 +26,11 @@ Craft.Core = {
 	Component          : Component,
 	StickComponent     : StickComponent,
 	Transition         : Transition,
-	Gesture            : Gesture
+	Gesture            : Gesture,
+	Route              : Route,
+	Router             : Router,
+	HashRouter         : HashRouter,
+	PathRouter         : PathRouter
 };
 
 import { View } from './src/Craft/UI/View.js';
