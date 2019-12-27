@@ -1,6 +1,6 @@
 {
   "name": "@craftkit/craft-uikit",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "JavaScript UI library for Inversion of Markup",
   "main": "index.js",
   "module": "index.js",
@@ -20,6 +20,7 @@
   "keywords": [
   	"WebComponents",
   	"Shadow DOM",
+  	"Encapsulated Styling",
   	"OOP",
   	"SPA",
   	"PWA",

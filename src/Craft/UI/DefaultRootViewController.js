@@ -91,8 +91,6 @@ export class DefaultRootViewController extends DefaultViewController {
 	}
 	
 	/**
-	 * @deprecated
-	 * 
 	 * Wrapping history.pushState to be able to call with named object
 	 * 
 	 * @param {Object} options - options
@@ -105,6 +103,21 @@ export class DefaultRootViewController extends DefaultViewController {
 		let title = options.title;
 		let path  = options.path;
 		window.history.pushState(state,title,path);
+	}
+	
+	/**
+	 * Wrapping history.replaceState to be able to call with named object
+	 * 
+	 * @param {Object} options - options
+	 * @param {Object} options.state - state
+	 * @param {String} options.title - page title
+	 * @param {String} options.path - path (hash)
+	 */
+	replaceState(options){
+		let state = options.state;
+		let title = options.title;
+		let path  = options.path;
+		window.history.replaceState(state,title,path);
 	}
 	
 	/**

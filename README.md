@@ -301,17 +301,30 @@ In Craft-UIKit application, RootViewController has responsibility for routing.
 At the time booting application via `Craft.Core.Bootstrap`, 
 listener for `popstate` is registered against `RootViewController.didReceivePopstate`. 
 
-`DefaultRootViewController.didReceivePopstate` extracts hash fragment from the current window.location, 
-and pass it to `resolveRoutingRequest`. 
+The recieved PopState event is passed for Router.
+Default router is `Craft.Core.HashRouter`, using '#' for routing component.
+
+You can define your original router in your application config object like described in the next section. 
+Craft-UIKit provides both HashRouter for '#' and PathRouter for '/'. The former is default.
+
+Router parses the PopState event and window.location, then pass it to `resolveRoutingRequest`. 
 You have to implement your own routing logic in it. Or you have to override `DefaultRootViewController.didReceivePopstate` as you like.
 
 ```javascript 
 class PageController extends Craft.UI.DefaultRootViewController {
     :
-    resolveRoutingRequest(path,event){
-        let match = path.match(/(\w*)/);
-        let menu = match[1] || 'home';
-        this.showMenu(menu,event);
+    resolveRoutingRequest(route){
+        switch(route.path){
+            case 'page1':
+                this.open({ page:new Page1() });
+                break;
+            case 'page2':
+                this.open({ page:new Page2() });
+                break;
+            default:
+                this.open({ page:new NotFound() });
+                break;
+		}
     }
     :
 }
@@ -332,6 +345,7 @@ For convenience, this is implemented as `DefaultRootViewController.bringup`.
 window.onload = function(){
     Craft.Core.Defaults.ALLOW_COMPONENT_SHORTCUT = true;
     Craft.Core.Bootstrap.boot({
+        router : Craft.Core.PathRouter,
         didBootApplication : function(){
             const rootViewController = new PageController();
             Craft.Core.Context.setRootViewController(rootViewController);
