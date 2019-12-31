@@ -1,6 +1,6 @@
 {
   "name": "@craftkit/craft-uikit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "JavaScript UI library for Inversion of Markup",
   "main": "index.js",
   "module": "index.js",
