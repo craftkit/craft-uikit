@@ -33,6 +33,19 @@ export var Device = {
 		}else{
 			return false;
 		}
+	},
+	
+	/**
+	 * Report the application mode
+	 * 
+	 * @memberof Craft.UI.Device
+	 * @method Craft.UI.Device.isStandaloneMode
+	 * @return {Boolean} - true to the app is running standalone mode
+	 */
+	isStandaloneMode : function(){
+		let isiOSApp = (window.navigator.standalone == true);
+		let isAndroidApp = (window.matchMedia('(display-mode: standalone)').matches);
+		return isiOSApp || isAndroidApp;
 	}
 	
 }
