@@ -17,6 +17,9 @@ export var PathRouter = {
 	/**
 	 * make Route from location.
 	 * 
+	 * Route.path is raw window.location.pathname.
+	 * Your `resolveRoutingRequest()` has a responsibility for handling the starting `/`.
+	 * 
 	 * @memberof Craft.Core.PathRoute
 	 * @method Craft.Core.PathRoute.route
 	 * 
@@ -25,7 +28,13 @@ export var PathRouter = {
 	 */
 	route : function(event,launch){
 		let path = window.location.pathname;
+		/*
 		let match = path.match(/\/(.*)\/?/);
+		let path = '';
+		if( match ){
+			path = match[1];
+		}
+		*/
 		
 		let route = new Route({
 			launch : launch,
