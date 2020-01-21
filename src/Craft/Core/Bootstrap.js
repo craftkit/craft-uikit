@@ -53,18 +53,9 @@ export var Bootstrap = {
 		if( !app ){
 			throw "no app";
 		}
-		Context.setApp(app);
 		
-		// get launch hash.
-		// this is just for your convenience. you may use `window.location` in your `didBootApplication` function.
-		/*
-		let hash = window.location.hash;
-		let match = hash.match(/^#\/(.*)/);
-		let entryPoint = '';
-		if( match ){
-			entryPoint = match[1];
-		}
-		*/
+		// also, init context
+		Context.setApp(app);
 		
 		// ok, launch the application
 		Context.getApp().didBootApplication();
