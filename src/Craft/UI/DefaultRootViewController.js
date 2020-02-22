@@ -33,17 +33,20 @@ import { Context } from '../Core/Context.js';
  *         this.appendView(container);
  *         this.appendView(new Footer());
  *     }
- *     resolveRoutingRequest(path,event){
- *         if( !path ){ path = ''; }
- *         let match = path.match(/(\w*)/);
+ *     resolveRoutingRequest(route){
+ *         this.selectTag(route);
+ *         
+ *         if( !route.path ){ route.path = ''; }
+ *         let match = route.path.match(/(\w*)/);
  *         let tag = match[1];
- *         if( tag ){ this.selectTag(tag,event); }
+ *         if( tag ){ this.selectTag(tag,route); }
  *     }
- *     selectTag(tag,event){
- *         if( !event ){
- *             // the event is popstate event object
- *             // you should update history if it is not passed.
- *             this.pushState({state:{tag:tag},path:'/#/'+tag});
+ *     selectTag(route){
+ *         let match = route.path.match(/(\w*)/);
+ *         let tag = match[1];
+ *         if( route.launch ){
+ *             // being in launching app. you should update history
+ *             window.history.replaceState({state:{tag:tag},path:'/#/'+tag});
  *         }
  *         document.title = "Tag: "+tag;
  *         this.items.selectTag(tag);

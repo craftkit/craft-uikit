@@ -240,6 +240,8 @@ export class Component {
 	}
 	
 	/**
+	 * DEPRECATED:
+	 * 
 	 * Show this component.
 	 * 
 	 * TODO:
@@ -255,6 +257,8 @@ export class Component {
 	}
 	
 	/**
+	 * DEPRECATED:
+	 * 
 	 * Hide this component.
 	 * 
 	 * @argument {Function} callback - callback
@@ -317,7 +321,6 @@ export class Component {
 		}
 		
 		component.viewWillAppear( () => {
-			component.show();
 			target.appendChild(component.view);
 			if( callback ){ callback(); }
 			component.viewDidAppear();
@@ -365,7 +368,6 @@ export class Component {
 		}
 		
 		component.viewWillDisappear( () => {
-			component.hide();
 			component.view.remove();
 			if( callback ){ callback(); }
 			component.viewDidDisappear();
