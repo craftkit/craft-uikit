@@ -46,7 +46,7 @@ import { Context } from '../Core/Context.js';
  *         let tag = match[1];
  *         if( route.launch ){
  *             // being in launching app. you should update history
- *             window.history.replaceState({state:{tag:tag},path:'/#/'+tag});
+ *             this.replaceState({state:{tag:tag},path:'/#/'+tag});
  *         }
  *         document.title = "Tag: "+tag;
  *         this.items.selectTag(tag);
