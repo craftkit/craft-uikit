@@ -300,7 +300,7 @@ export class Component {
 	 * });
 	 * 
 	 */
-	appendView(options){
+	appendSubView(options){
 		if( !options ){ return; }
 		let target, component, callback;
 		
@@ -331,10 +331,17 @@ export class Component {
 	}
 	
 	/** 
-	 * alias for appendView
+	 * alias for appendSubView
+	 */
+	appendView(options){
+		this.appendView(options);
+	}
+	
+	/** 
+	 * alias for appendSubView
 	 */
 	append(options){
-		this.appendView(options);
+		this.appendSubView(options);
 	}
 	
 	/**
@@ -355,7 +362,7 @@ export class Component {
 	 * this.removeView(this.btn);
 	 * 
 	 */
-	removeView(options){
+	removeSubView(options){
 		if( !options ){ return; }
 		let target, component, callback;
 		
@@ -374,10 +381,19 @@ export class Component {
 	}
 	
 	/** 
-	 * alias for removeView
+	 * DEPRECATED:
+	 * TODO: remove this method
+	 * alias for removeSubView
+	 */
+	removeView(options){
+		this.removeView(options);
+	}
+	
+	/** 
+	 * Remove me from parent
 	 */
 	remove(options){
-		this.removeView(options);
+		this.parent.removeSubView(this);
 	}
 	
 	/**
