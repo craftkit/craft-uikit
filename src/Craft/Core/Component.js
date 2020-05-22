@@ -18,6 +18,7 @@ export class Component {
 		this.viewController = ''; // optional. viewController this component is managed by. would be set by viewController or by yourself.
 		this.isViewLoaded   = false; // true after init() and render() was called
 		this.visible        = false; // true while visible
+		this.parent         = null; // parent Component
 		
 		this.view   = document.createElement('div');            // shadow host
 		this.root   = '';                                       // component root based on `template`
@@ -320,6 +321,8 @@ export class Component {
 			component.setViewController(this.viewController);
 		}
 		
+		component.parent = this;
+		
 		component.viewWillAppear( () => {
 			target.appendChild(component.view);
 			if( callback ){ callback(); }
@@ -350,10 +353,6 @@ export class Component {
 	 * // remove this.btn.view from this.view. 
 	 * 
 	 * this.removeView(this.btn);
-	 * 
-	 * // you can also remove btn view by tis DOm method
-	 * 
-	 * btn.view.remove();
 	 * 
 	 */
 	removeView(options){
