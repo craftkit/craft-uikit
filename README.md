@@ -1,24 +1,7 @@
 
 # Craft-UIKit
 
-Craft-UIKit is a JavaScript UI library for **Inversion of Markup**. 
-
-Web application based on Inversion of Markup inverts Markup and JavaScript.  
-Markup should be fully encapsulated into the shadow element in JavaScript object.
-
-Markup principle something like this:
-
-```javascript 
-<Hello name="world"></Hello>
-``` 
-
-Inversion of Markup principle something like this:
-
-```javascript 
-viewController.append(new Hello({name:"world"}));
-``` 
-
-Mobile application devplopers are more familiar with this way.
+Craft-UIKit is a JavaScript UI library for Clear Web OOP.
 
 
 ## Component
