@@ -397,6 +397,45 @@ export class Component {
 	}
 	
 	/**
+	 * Replace view
+	 * 
+	 * remove all components in the target, and append new one.
+	 * 
+	 * @example
+	 * 
+	 * let loading_indicator = new LoadingIndicator();
+	 * 
+	 * this.appendView(loading_indicator);
+	 * 
+	 * database.load(id,(data)=>{
+	 *     let view = new DataView({data:data});
+	 *     this.replaceView(view);
+	 * });
+	 * 
+	 */
+	replaceView(options){
+		if( !options ){ return; }
+		let target, component, callback;
+		
+		if( options instanceof Component ){
+			target    = this.root;
+			component = options;
+		}else{
+			target    = options.target || this.root;
+			component = options.component;
+			callback  = options.callback;
+		}
+		
+		while(target.firstChild){
+			target.removeChild(target.firstChild);
+		}
+		this.appendSubView({
+			target    : target,
+			component : component
+		});
+	}
+	
+	/**
 	 * Stylesheet definition.
 	 * 
 	 * If you would like to cascade styles from parent class, just append super.style
