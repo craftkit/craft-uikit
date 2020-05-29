@@ -334,7 +334,7 @@ export class Component {
 	 * alias for appendSubView
 	 */
 	appendView(options){
-		this.appendView(options);
+		this.appendSubView(options);
 	}
 	
 	/** 
