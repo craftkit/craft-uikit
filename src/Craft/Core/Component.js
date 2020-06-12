@@ -386,7 +386,7 @@ export class Component {
 	 * alias for removeSubView
 	 */
 	removeView(options){
-		this.removeView(options);
+		this.removeSubView(options);
 	}
 	
 	/** 
