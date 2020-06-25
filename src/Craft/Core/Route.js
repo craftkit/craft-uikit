@@ -27,7 +27,7 @@ export class Route {
 	 * 
 	 * @param {Object} options - options
 	 * @param {Boolean} options.launch - true if this is the first launch, or access from out side of application history scope caused by browser back/foward
-	 * @param {String} options.path - parsed path. parsing is responsibility of Router implementation
+	 * @param {String} options.path - parsed path. parsing is responsibility of Router implementation. This is not a location.pathname
 	 * @param {PopStateEvent} options.event - PopStateEvent if defined
 	 */
 	constructor(options){

@@ -43,6 +43,21 @@ export var PathRouter = {
 		});
 		
 		Context.getRootViewController().resolveRoutingRequest(route);
+	},
+	
+	/**
+	 * normalize path
+	 * 
+	 * Concrete RootViewController that has a responsibility for routing request should normalize path to absorb the inaccuracy.
+	 * 
+	 * @memberof Craft.Core.PathRoute
+	 * @method Craft.Core.PathRoute.normalize
+	 * 
+	 * @param {String} path - path for component
+	 */
+	normalize : function(path){
+		path = path.replace(/^#*\/*/,'')
+		return '/'+path;
 	}
 	
 };
