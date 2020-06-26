@@ -51,6 +51,7 @@ export var HashRouter = {
 	 * @param {String} path - path for component
 	 */
 	normalize : function(path){
+		if( !path ){ path = ''; }
 		path = path.replace(/^#*\/*/,'');
 		return '#/'+path;
 	}
