@@ -1,6 +1,6 @@
 {
   "name": "@craftkit/craft-uikit",
-  "version": "2.1.4",
+  "version": "3.0.0",
   "description": "Clear Web OOP for Generation WebComponents",
   "main": "index.js",
   "module": "index.js",
