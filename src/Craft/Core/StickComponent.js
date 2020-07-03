@@ -18,11 +18,11 @@ export class StickComponent extends Component {
 	 */
 	init(){
 		if( this.packagename ){
-			this.name = this.packagename.replace(/[\/\.]/g,'_'); // id should not have dot
+			this.componentname = this.packagename.replace(/[\/\.]/g,'_'); // id should not have dot
 		}else{
-			this.name = this.constructor.name;
+			this.componentname = this.constructor.name;
 		}
-		this.componentId = this.name;
+		this.componentId = this.componentname;
 		ComponentStack.set(this.componentId,this);
 	}
 	
