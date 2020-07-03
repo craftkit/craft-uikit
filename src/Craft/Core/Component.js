@@ -392,7 +392,7 @@ export class Component {
 	/** 
 	 * Remove me from parent
 	 */
-	remove(options){
+	removeFromParent(options){
 		this.parent.removeSubView(this);
 	}
 	
