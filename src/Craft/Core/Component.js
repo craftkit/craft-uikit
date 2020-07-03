@@ -241,6 +241,32 @@ export class Component {
 	}
 	
 	/**
+	 * Show this component.
+	 * 
+	 * TODO:
+	 * this.view.style.display should cascade original definition.
+	 * It may be `inline-block`.
+	 * 
+	 * @argument {Function} callback - callback
+	 */
+	showComponent(callback){
+		this.view.style.display = 'block';
+		this.visible = true;
+		if( callback ){ callback() }
+	}
+	
+	/**
+	 * Hide this component.
+	 * 
+	 * @argument {Function} callback - callback
+	 */
+	hideComponent(callback){
+		this.view.style.display = 'none';
+		this.visible = false;
+		if( callback ){ callback() }
+	}
+	
+	/**
 	 * Append sub-view to this.view.
 	 * 
 	 * @param {Object} options - option
