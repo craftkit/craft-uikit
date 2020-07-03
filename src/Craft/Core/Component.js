@@ -241,36 +241,6 @@ export class Component {
 	}
 	
 	/**
-	 * DEPRECATED:
-	 * 
-	 * Show this component.
-	 * 
-	 * TODO:
-	 * this.view.style.display should cascade original definition.
-	 * It may be `inline-block`.
-	 * 
-	 * @argument {Function} callback - callback
-	 */
-	show(callback){
-		this.view.style.display = 'block';
-		this.visible = true;
-		if( callback ){ callback() }
-	}
-	
-	/**
-	 * DEPRECATED:
-	 * 
-	 * Hide this component.
-	 * 
-	 * @argument {Function} callback - callback
-	 */
-	hide(callback){
-		this.view.style.display = 'none';
-		this.visible = false;
-		if( callback ){ callback() }
-	}
-	
-	/**
 	 * Append sub-view to this.view.
 	 * 
 	 * @param {Object} options - option
@@ -331,6 +301,7 @@ export class Component {
 	}
 	
 	/** 
+	 * DEPRECATED: 
 	 * alias for appendSubView
 	 */
 	appendView(options){
@@ -338,6 +309,7 @@ export class Component {
 	}
 	
 	/** 
+	 * DEPRECATED: 
 	 * alias for appendSubView
 	 */
 	append(options){
@@ -397,6 +369,9 @@ export class Component {
 	}
 	
 	/**
+	 * TODO: 
+	 * replaceView -> replaceSubView
+	 * 
 	 * Replace view
 	 * 
 	 * remove all components in the target, and append new one.
