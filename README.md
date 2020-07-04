@@ -3,6 +3,8 @@
 
 Craft-UIKit is a JavaScript UI library for Clear Web OOP.
 
+Try online tutorial:  
+[https://github.com/craftkit/craftkit-playground](https://github.com/craftkit/craftkit-playground)
 
 ## Component
 
@@ -268,12 +270,11 @@ In other words, while you extends those classes and keep this way, lifecycle is 
 
 Related method:
 
-| method      | what is    |
-|:------------|:-----------|
-| appendView  | append sub-component's view | 
-| removeView  | remove sub-component's view | 
-| append      | alias for appendView | 
-| remove      | alias for removeView | 
+| method        | what is    |
+|:--------------|:-----------|
+| appendSubView | append sub-component view | 
+| removeSubView | remove sub-component view | 
+| removeFromParent | remove component view from parent |
 
 
 ## Routing and RootViewController
