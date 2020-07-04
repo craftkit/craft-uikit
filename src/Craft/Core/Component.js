@@ -327,7 +327,7 @@ export class Component {
 	}
 	
 	/** 
-	 * DEPRECATED: 
+	 * TODO: PENDING DEPRECATE: 
 	 * alias for appendSubView
 	 */
 	appendView(options){
@@ -379,8 +379,7 @@ export class Component {
 	}
 	
 	/** 
-	 * DEPRECATED:
-	 * TODO: remove this method
+	 * TODO: PENDING DEPRECATE: 
 	 * alias for removeSubView
 	 */
 	removeView(options){
@@ -395,8 +394,7 @@ export class Component {
 	}
 	
 	/**
-	 * TODO: 
-	 * replaceView -> replaceSubView
+	 * TODO: replaceView -> replaceSubView
 	 * 
 	 * Replace view
 	 * 
