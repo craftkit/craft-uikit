@@ -288,6 +288,13 @@ export class Component {
 	 *     component : btn
 	 * });
 	 * 
+	 * or
+	 * 
+	 * this.appendView({
+	 *     id        : 'btn', // or '#btn'
+	 *     component : btn
+	 * });
+	 * 
 	 * // if you know the structrue of panel.view, you can append btn.view directly into the deep point of the panel.
 	 * 
 	 * panel.appendView({
@@ -304,7 +311,12 @@ export class Component {
 			target    = this.root;
 			component = options;
 		}else{
-			target    = options.target || this.root;
+			if( options.id ){
+				let id = options.id.replace(/^#/,'');
+				target = this.shadow.getElementById(id);
+			}else{
+				target = options.target || this.root;
+			}
 			component = options.component;
 			callback  = options.callback;
 		}
@@ -362,7 +374,7 @@ export class Component {
 	 */
 	removeSubView(options){
 		if( !options ){ return; }
-		let target, component, callback;
+		let component, callback;
 		
 		if( options instanceof Component ){
 			component = options;
@@ -420,7 +432,12 @@ export class Component {
 			target    = this.root;
 			component = options;
 		}else{
-			target    = options.target || this.root;
+			if( options.id ){
+				let id = options.id.replace(/^#/,'');
+				target = this.shadow.getElementById(id);
+			}else{
+				target = options.target || this.root;
+			}
 			component = options.component;
 			callback  = options.callback;
 		}
