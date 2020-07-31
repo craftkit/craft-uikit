@@ -34,6 +34,8 @@ Craft.Core = {
 };
 
 import { View } from './src/Craft/UI/View.js';
+import { BlockView } from './src/Craft/UI/BlockView.js';
+import { InlineBlockView } from './src/Craft/UI/InlineBlockView.js';
 import { DefaultViewController } from './src/Craft/UI/DefaultViewController.js';
 import { DefaultRootViewController } from './src/Craft/UI/DefaultRootViewController.js';
 import { ModalViewController } from './src/Craft/UI/ModalViewController.js';
@@ -41,6 +43,8 @@ import { Device } from './src/Craft/UI/Device.js';
 
 Craft.UI = {
 	View                      : View,
+	BlockView                 : BlockView,
+	InlineBlockView           : InlineBlockView,
 	DefaultViewController     : DefaultViewController,
 	DefaultRootViewController : DefaultRootViewController,
 	ModalViewController       : ModalViewController,

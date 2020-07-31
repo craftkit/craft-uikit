@@ -99,10 +99,10 @@ class HelloWorld extends Craft.UI.DefaultViewController {
     }
 }
 
-class Msg extends Craft.UI.View {
+class Msg extends Craft.UI.InlineBlockView {
     style(componentId){
         return `
-            .root { display: inline-block; margin: 10px; }
+            .root { margin: 10px; }
             .msg { color: blue; }
         `;
     }
