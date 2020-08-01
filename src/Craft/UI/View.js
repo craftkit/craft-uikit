@@ -39,11 +39,9 @@ export class View extends Component {
 	}
 	
 	/**
-	 * Set ViewController manages me.  
+	 * Change viewController that manages me
 	 * 
-	 * If you have more components under your RootView, you have to propagete the viewController for them.
-	 * 
-	 * @param {Craft.Core.Component} viewController - any Component available
+	 * @param {Craft.Core.Component} viewController - allow any Component
 	 */
 	setViewController(viewController){
 		this.viewController = viewController;

@@ -94,7 +94,7 @@ export class DefaultViewController extends View {
 	 * @param {Object} options - options|component
 	 * @param {Craft.Core.Component} options.component - component (auto setViewController)
 	 */
-	appendView(options){
+	appendSubView(options){
 		if( !options ){ return; }
 		let component;
 		if( options instanceof Component ){
@@ -104,21 +104,7 @@ export class DefaultViewController extends View {
 		}
 		component.setViewController(this);
 		
-		super.appendView(options);
-	}
-	
-	/**
-	 * ovverride append: with viewController cascading
-	 */
-	append(options){
-		this.appendView(options);
-	}
-	
-	/**
-	 * Remove view
-	 */
-	removeView(options){
-		super.removeView(options);
+		super.appendSubView(options);
 	}
 	
 	/**
