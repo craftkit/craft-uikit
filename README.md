@@ -241,10 +241,10 @@ You can select this behavior, but you may love to use this shortcut.
 Without this shourcut, you can call instance method like following:
 
 ```javascript 
-onclick="window.Craft.Core.ComopnentStack.get('${componentId}').say('wow')"
+onclick="window.Craft.Core.ComponentStack.get('${componentId}').say('wow')"
 ``` 
 
-Additionaly, if you know comopnentId for another instance, you can call any method via it, like as global shared function.
+Additionaly, if you know componentId for another instance, you can call any method via it, like as global shared function.
 
 Public library developer shoud write its template by verbose mode using fully quolifiied component access, to be able to run without shourcut. 
 
